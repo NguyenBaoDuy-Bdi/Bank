@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điền Thông Tin Bank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .phone-screen {
+            width: 380px;
+            height: 870px;
+            background: linear-gradient(135deg, #0078ff, #00c6ff);
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .notification {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            margin-bottom: 20px;
+            animation: slide-in 1s ease-out;
+        }
+
+        .notification img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+
+        .notification-content {
+            flex-grow: 1;
+        }
+
+        .notification-content strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .notification-content p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .notification-time {
+            font-size: 12px;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+
+        .input-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-form input[type="text"],
+        .input-form textarea {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .input-form input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background-color: #fff;
+            color: #0078ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-form input[type="submit"]:hover {
+            background-color: #f1f1f1;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="phone-screen">
+    <div class="notification">
+        <img src="https://i.imgur.com/WoTh2Xk.jpeg" alt="Bank Logo">
+        <div class="notification-content">
+            <strong>Thông báo biến động số dư</strong>
+            <p>TK 13xxx365 | GD: +150,000 VND 27/05/24 10:55<br>SD: 150,000 VND | ND: NGUYEN GIA BAO chuyen khoan</p>
+        </div>
+        <div class="notification-time">
+            <span>10:55</span>
+        </div>
+    </div>
+<center><h3>Fake biến động số dư</h3></center>
+    <!-- Form nhập dữ liệu -->
+    <form action="fake-bank.php" method="post" class="input-form">
+        <label for="account">Số tài khoản:</label>
+        <input type="text" id="account" name="account" placeholder="13xxx365" required>
+        <label for="amount">Số tiền:</label>
+        <input type="text" id="amount" name="amount" placeholder="Ví dụ: +150,000" required>
+        <label for="date">Ngày:</label>
+        <input type="text" id="date" name="date" placeholder="Ví dụ: 27/05/24 10:55" required>
+        <label for="sodu">Số dư:</label>
+        <input type="text" id="sodu" name="sodu" placeholder="Ví dụ: 2,000,949" required>
+        <label for="content">Nội dung:</label>
+        <textarea id="content" name="content" placeholder="Nhập nội dung, Ví dụ: NGUYEN GIA BAO chuyen khoan" required></textarea>
+        <input type="submit" value="Hiển thị thông báo">
+    </form>
+    <!-- Kết thúc form nhập dữ liệu -->
+</div>
+</body>
+</html>
